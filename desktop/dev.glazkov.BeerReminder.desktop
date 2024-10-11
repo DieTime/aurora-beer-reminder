@@ -4,7 +4,8 @@ X-Nemo-Application-Type=silica-qt5
 Exec=/usr/bin/dev.glazkov.BeerReminder
 Icon=dev.glazkov.BeerReminder
 MimeType=x-scheme-handler/aurora-dev.glazkov.beerreminder
-Name=Friday Beer
+Name=Beer Reminder
+Name[ru]=Пивная напоминалка
 
 [X-Application]
 OrganizationName=dev.glazkov
