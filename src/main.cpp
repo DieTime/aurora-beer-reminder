@@ -33,7 +33,7 @@ void remindAboutBeer()
             "callFriend", "Call your best friend",
         },
         QVariantMap{
-            {"x-nemo-remote-action-default", "aurora-dev.glazkov.BeerReminder:BeerPage"},
+            {"x-nemo-remote-action-default", "aurora-dev.glazkov.beerreminder:BeerPage"},
             {"x-nemo-remote-action-findBar", "https://friday.bars.ru"},
             {"x-nemo-remote-action-callFriend", "tel:89998887766"},
         },
