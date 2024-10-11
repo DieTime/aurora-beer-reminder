@@ -41,7 +41,7 @@ Page {
 
         Image {
             anchors.horizontalCenter: parent.horizontalCenter
-            source: "../images/glass.png"
+            source: "../images/beer.png"
             width: parent.width * 0.5
             height: width
             fillMode: Image.PreserveAspectFit

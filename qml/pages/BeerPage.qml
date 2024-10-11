@@ -8,7 +8,7 @@ Page {
 
         Image {
             anchors.horizontalCenter: parent.horizontalCenter
-            source: "../images/glass.png"
+            source: "../images/beer.png"
             width: parent.width
             height: width
             fillMode: Image.PreserveAspectFit
