@@ -24,7 +24,7 @@ void remindAboutBeer()
     message.setArguments({
         QGuiApplication::applicationName(),
         quint32(0),
-        "icon",
+        Aurora::Application::pathTo("qml/images/icon.png").toString(),
         "It's Friday",
         "It's time to call your friends over for a beer",
         QStringList{

@@ -83,4 +83,3 @@ Page {
         remainingText.text = common.addZero(remaining.hours) + ":" + common.addZero(remaining.minutes) + ":" + common.addZero(remaining.seconds);
     }
 }
-
