@@ -25,8 +25,8 @@ CoverBackground {
     CoverTemplate {
         id: coverTemplate
         primaryText: "..."
-        secondaryText: "Time until Friday beer"
-        description: "There's still a little more to go"
+        secondaryText: qsTr("cover_secondary_text")
+        description: qsTr("cover_description")
     }
 
     Component.onCompleted: {

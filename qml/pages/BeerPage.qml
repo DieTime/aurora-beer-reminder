@@ -17,7 +17,7 @@ Page {
         Label {
             anchors.horizontalCenter: parent.horizontalCenter
             font.pixelSize: Theme.fontSizeHuge
-            text: "Beer time!"
+            text: qsTr("beer_time")
         }
     }
 }

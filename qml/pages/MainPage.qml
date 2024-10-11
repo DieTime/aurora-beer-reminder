@@ -36,6 +36,7 @@ Page {
     }
 
     Column {
+        id: content
         anchors.centerIn: parent
         spacing: 20
 
@@ -55,7 +56,7 @@ Page {
         Label {
             anchors.horizontalCenter: parent.horizontalCenter
             font.pixelSize: Theme.fontSizeExtraLarge
-            text: "Time until Friday beer"
+            text: qsTr("time_until_friday")
         }
 
         Label {
@@ -65,17 +66,15 @@ Page {
             id: remainingText
             text: "..."
         }
+    }
 
-        Item {
-            width: parent.width
-            height: 30
-        }
-
-        Button {
-            width: parent.width
-            text: "I'm tired of waiting"
-            onClicked: invoker.invoke("OpenURI", {}, {"uri": "aurora-dev.glazkov.beerreminder:BeerPage"})
-        }
+    Button {
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: (parent.width - content.width) / 3
+        width: content.width
+        text: qsTr("im_tired_button")
+        onClicked: invoker.invoke("OpenURI", {}, {"uri": "aurora-dev.glazkov.beerreminder:BeerPage"})
     }
 
     Component.onCompleted: {

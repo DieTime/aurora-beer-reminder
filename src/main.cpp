@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <QGuiApplication>
 #include <QScopedPointer>
+#include <QTranslator>
 #include <QtQuick>
 
 #include <auroraapp.h>
@@ -14,6 +15,24 @@
 
 using namespace RuntimeManager;
 
+void setupApplication(QGuiApplication *app)
+{
+    app->setOrganizationName("dev.glazkov");
+    app->setApplicationName("BeerReminder");
+
+    QTranslator *baseTs = new QTranslator(app);
+    baseTs->load(Aurora::Application::pathTo("translation/dev.glazkov.BeerReminder.qm").toString());
+
+    QTranslator *nativeTs = new QTranslator(app);
+    nativeTs->load(QLocale(),
+                   "dev.glazkov.BeerReminder",
+                   "-",
+                   Aurora::Application::getPath(PathType::TranslationLocation));
+
+    app->installTranslator(baseTs);
+    app->installTranslator(nativeTs);
+}
+
 void remindAboutBeer()
 {
     QDBusConnection connection = QDBusConnection::sessionBus();
@@ -22,15 +41,15 @@ void remindAboutBeer()
                                                           "org.freedesktop.Notifications",
                                                           "Notify");
     message.setArguments({
-        QGuiApplication::applicationName(),
+        QObject::tr("notification_application_name"),
         quint32(0),
         Aurora::Application::pathTo("qml/images/icon.png").toString(),
-        "It's Friday",
-        "It's time to call your friends over for a beer",
+        QObject::tr("notification_title"),
+        QObject::tr("notification_description"),
         QStringList{
-            "default", "Default action",
-            "findBar", "Find bar",
-            "callFriend", "Call your best friend",
+            "default", "Open beer page",
+            "findBar", QObject::tr("notification_action_find_bar"),
+            "callFriend", QObject::tr("notification_action_call_friend"),
         },
         QVariantMap{
             {"x-nemo-remote-action-default", "aurora-dev.glazkov.beerreminder:BeerPage"},
@@ -69,8 +88,7 @@ void initRemindBackgroundTask()
 int main(int argc, char *argv[])
 {
     QGuiApplication *app = Aurora::Application::application(argc, argv);
-    app->setOrganizationName("dev.glazkov");
-    app->setApplicationName("BeerReminder");
+    setupApplication(app);
 
     RuntimeDispatcher *dispatcher = RuntimeDispatcher::instance();
 
