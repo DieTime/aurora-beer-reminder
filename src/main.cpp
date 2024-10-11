@@ -98,7 +98,7 @@ int main(int argc, char *argv[])
 
     dispatcher->onApplicationStarted([] {
         QQuickView *view = Aurora::Application::createView();
-        view->setSource(Aurora::Application::pathTo("qml/dev.glazkov.BeerReminder.qml"));
+        view->setSource(Aurora::Application::pathToMainQml());
         view->show();
 
         initRemindBackgroundTask();
