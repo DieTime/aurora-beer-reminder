@@ -12,14 +12,16 @@ CoverBackground {
         id: common
     }
 
+    function updateRemaining() {
+        var remaining = common.calculateRemainingTime();
+        coverTemplate.primaryText = common.addZero(remaining.hours) + ":" + common.addZero(remaining.minutes);
+    }
+
     Timer {
         interval: 60000
         running: true
         repeat: true
-        onTriggered: {
-            var remaining = common.calculateRemainingTime();
-            coverTemplate.primaryText = common.addZero(remaining.hours) + ":" + common.addZero(remaining.minutes);
-        }
+        onTriggered: updateRemaining()
     }
 
     CoverTemplate {
@@ -29,8 +31,5 @@ CoverBackground {
         description: qsTr("cover_description")
     }
 
-    Component.onCompleted: {
-        var remaining = common.calculateRemainingTime();
-        coverTemplate.primaryText = common.addZero(remaining.hours) + ":" + common.addZero(remaining.minutes);
-    }
+    Component.onCompleted: updateRemaining()
 }

@@ -25,14 +25,16 @@ Page {
         id: common
     }
 
+    function updateRemaining() {
+        var remaining = common.calculateRemainingTime();
+        remainingText.text = common.addZero(remaining.hours) + ":" + common.addZero(remaining.minutes) + ":" + common.addZero(remaining.seconds);
+    }
+
     Timer {
         interval: 1000
         running: true
         repeat: true
-        onTriggered: {
-            var remaining = common.calculateRemainingTime();
-            remainingText.text = common.addZero(remaining.hours) + ":" + common.addZero(remaining.minutes) + ":" + common.addZero(remaining.seconds);
-        }
+        onTriggered: updateRemaining()
     }
 
     Column {
@@ -77,8 +79,5 @@ Page {
         onClicked: invoker.invoke("OpenURI", {}, {"uri": "aurora-dev.glazkov.beerreminder:BeerPage"})
     }
 
-    Component.onCompleted: {
-        var remaining = common.calculateRemainingTime();
-        remainingText.text = common.addZero(remaining.hours) + ":" + common.addZero(remaining.minutes) + ":" + common.addZero(remaining.seconds);
-    }
+    Component.onCompleted: updateRemaining()
 }
