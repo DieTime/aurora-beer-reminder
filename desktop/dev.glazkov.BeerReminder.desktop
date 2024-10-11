@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Exec=/usr/bin/dev.glazkov.BeerReminder
+Icon=dev.glazkov.BeerReminder
+MimeType=x-scheme-handler/aurora-dev.glazkov.beerreminder
+Name=Friday Beer
+
+[X-Application]
+OrganizationName=dev.glazkov
+ApplicationName=BeerReminder
+Intents=OpenURI
+
+[X-Task Remind]
+Type=scheduled
