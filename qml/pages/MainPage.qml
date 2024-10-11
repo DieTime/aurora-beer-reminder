@@ -8,7 +8,7 @@ Page {
         intentName: "OpenURI"
         onInvoked: {
             var page = data["uri"].split(':')[1]
-            pageStack.replace(Qt.resolvedUrl(page + ".qml"))
+            pageStack.push(Qt.resolvedUrl(page + ".qml"))
         }
     }
 
