@@ -50,11 +50,6 @@ Page {
             fillMode: Image.PreserveAspectFit
         }
 
-        Item {
-            width: parent.width
-            height: 30
-        }
-
         Label {
             anchors.horizontalCenter: parent.horizontalCenter
             font.pixelSize: Theme.fontSizeExtraLarge
@@ -74,7 +69,6 @@ Page {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
         anchors.bottomMargin: (parent.width - content.width) / 3
-        width: content.width
         text: qsTr("im_tired_button")
         onClicked: invoker.invoke("OpenURI", {}, {"uri": "aurora-dev.glazkov.beerreminder:BeerPage"})
     }

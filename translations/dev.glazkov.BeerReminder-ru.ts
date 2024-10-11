@@ -25,12 +25,12 @@
 <context>
     <name>MainPage</name>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="61"/>
+        <location filename="../qml/pages/MainPage.qml" line="56"/>
         <source>time_until_friday</source>
         <translation>Время до пива в пятницу</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="78"/>
+        <location filename="../qml/pages/MainPage.qml" line="72"/>
         <source>im_tired_button</source>
         <translation>Я устал ждать</translation>
     </message>
