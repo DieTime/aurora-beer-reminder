@@ -60,7 +60,7 @@ Page {
 
         Label {
             anchors.horizontalCenter: parent.horizontalCenter
-            font.pixelSize: Theme.fontSizeMedium
+            font.pixelSize: Theme.fontSizeLarge
             color: Theme.secondaryColor
             id: remainingText
             text: "..."
